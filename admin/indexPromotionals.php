@@ -52,6 +52,7 @@
                                 $about_author = $row['about_author'];
                                 $path = '/baitap/creative_onepage/files/'.$img;
 							?>
+                            
                                 <tr>
                                     <td class="align-center"><?php echo $id_pro; ?></td>
                                     <td><?php echo $title;?></td>

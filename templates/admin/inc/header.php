@@ -8,6 +8,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>Creative OnePage Templates</title>
         <link rel="stylesheet" type="text/css" href="/baitap/creative_onepage/templates/admin/css/styles.css" media="screen" />
+        <script src="/baitap/creative_onepage/templates/admin/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
 		<script type = "text/javascript" src = "ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="jquery.validate.js"></script>
@@ -69,10 +70,10 @@
 							<li><a href="indexPromotionals.php">Promotionals</a></li>
                             <li><a href="indexCounters.php">Counters</a></li>
                             <li><a href="indexUser.php">Progressbar</a></li>
-                            <li><a href="indexUser.php">Projects</a></li>
+                            <li><a href="indexProject.php">Projects</a></li>
                             <li><a href="indexUser.php">Specialtions</a></li>
-                            <li><a href="indexUser.php">Special icon</a></li>
-                            <li><a href="indexUser.php">Categorys</a></li>
+                            <li><a href="indexSpectialIcon.php">Special icon</a></li>
+                            <li><a href="indexCategory.php?page=1">Categorys</a></li>
                             <li><a href="indexUser.php">Users</a></li>
                             <?php 
                                  }
