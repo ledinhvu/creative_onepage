@@ -6,12 +6,12 @@
 		header("location:login.php");
 		exit();
 	}
-?> 
+?>
             <div class="bottom-spacing">
                   <!-- Button -->
                   <div class="float-left">
-                      <a href="addSliders.php" class="button">
-                      	<span>Add Sliders <img src="/baitap/creative_onepage/templates/admin/images/plus-small.gif" alt="Thêm tin"></span>
+                      <a href="addPromotionals.php" class="button">
+                      	<span>Add Promotional <img src="/baitap/creative_onepage/templates/admin/images/plus-small.gif" alt="Thêm tin"></span>
                       </a>
                   </div>
                   <div class="clear"></div>
@@ -20,7 +20,7 @@
             <div class="grid_12">
                 <!-- Example table -->
                 <div class="module">
-                	<h2><span>List Image</span></h2>
+                	<h2><span>List Promotional</span></h2>
                     
                     <div class="module-table-body">
                     	<form action="">
@@ -28,42 +28,51 @@
                         	<thead>
                                 <tr>
                                     <th style="width:4%; text-align: center;">ID</th>
-                                    <th style="width:20%; text-align: center;">Title</th>
-                                    <th style="width:30%; text-align: center;">Content</th>
-                                    <th style="width:200px; text-align: center;">Images</th>
+                                    <th style="width:10%; text-align: center;">Title</th>
+                                    <th style="width:20%; text-align: center;">Detail</th>
+                                    <th style="width:15%; text-align: center;">Images</th>
+                                    <th style="width:10%; text-align: center;">Author</th>
+                                    <th style="width:10%; text-align: center;">Job</th>
+                                    <th style="width:20%; text-align: center;">About Author</th>
                                     <th style="width:11%; text-align: center;">Active</th>
                                 </tr>
                             </thead>
                             <tbody>
 							<?php
-								$query = "SELECT * FROM sliders";
+								$query = "SELECT * FROM promotionals";
 								//thực hiện truy vấn
 								$result = $mysqli->query($query);
 								while($row = mysqli_fetch_assoc($result)){
-								$id_slide = $row['id_sliders'];
+								$id_pro = $row['id_pro'];
 								$title = $row['title'];
-                                $content = $row['content'];
+                                $detail = $row['detail'];
                                 $img = $row['img'];
+                                $author = $row['author'];
+                                $job = $row['job'];
+                                $about_author = $row['about_author'];
                                 $path = '/baitap/creative_onepage/files/'.$img;
 							?>
                                 <tr>
-                                    <td class="align-center"><?php echo $id_slide; ?></td>
+                                    <td class="align-center"><?php echo $id_pro; ?></td>
                                     <td><?php echo $title;?></td>
-                                    <td><?php echo $content;?></td>
+                                    <td><?php echo $detail;?></td>
                                     <td style="text-align:center">
                                         <?php
 										if($img== NULL){
 											echo "Không có hình";
 										}else{
 									    ?>
-                                        <img src="<?php echo $path;?>" class="img" style="width:200px"/>
+                                        <img src="<?php echo $path;?>" class="img" />
                                         <?php
                                             }
                                         ?>
                                     </td>
+                                    <td><?php echo $author;?></td>
+                                    <td><?php echo $job;?></td>
+                                    <td><?php echo $about_author;?></td>
                                     <td align="center">
-                                        <a href="editSliders.php?id_sliders=<?php echo $id_slide;?>">Edit <img src="/baitap/creative_onepage/templates/admin/images/pencil.gif" alt="edit" /></a>
-                                        <a href="delSliders.php?id_sliders=<?php echo $id_slide;?>">Delete <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
+                                        <a href="editPromotionals.php?id_pro=<?php echo $id_pro;?>">Edit <img src="/baitap/creative_onepage/templates/admin/images/pencil.gif" alt="edit" /></a>
+                                        <a href="delPromotionals.php?id_pro=<?php echo $id_pro;?>">Delete <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
                                     </td>
                                 </tr>
 							<?php 
