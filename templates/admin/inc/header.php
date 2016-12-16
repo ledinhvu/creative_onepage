@@ -61,14 +61,15 @@
                 <div class="container_12">
                     <div class="grid_12">
                         <ul>
-                            <li><a href="indexMenus.php">Catelogs</a></li>
+                            <li><a href="indexMenus.php">Menus</a></li>
                             <li><a href="indexSliders.php">Sliders</a></li>
 							<li><a href="indexUser.php">Promotionals</a></li>
-                            <li><a href="indexUser.php">Sigworks</a></li>
-                            <li><a href="indexUser.php">Works</a></li>
+                            <li><a href="indexUser.php">Couters</a></li>
+                            <li><a href="indexUser.php">Progressbar</a></li>
                             <li><a href="indexUser.php">Projects</a></li>
-                            <li><a href="indexUser.php">Statistics</a></li>
-                            <li><a href="indexUser.php">Companys</a></li>
+                            <li><a href="indexUser.php">Specialtions</a></li>
+                            <li><a href="indexUser.php">Special icon</a></li>
+                            <li><a href="indexCategory.php">Categorys</a></li>
                             <li><a href="indexUser.php">Users</a></li>
                         </ul>
                         
