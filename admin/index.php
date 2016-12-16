@@ -1,14 +1,13 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/tuan3/templates/admin/inc/header.php';?>      
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>      
             <!-- Dashboard icons -->
             <div class="grid_main_l">
-            	<a href="addNews.php" class="dashboard-module">
-                	<img src="/baitap/tuan3/templates/admin/images/Crystal_Clear_write.gif" width="64" height="64" alt="edit" />
-                	<span>Thêm tin tức</span>
+            	<a href="" class="dashboard-module">
+                	<img src="/baitap/creative_onepage/templates/admin/images/Crystal_Clear_write.gif" width="64" height="64" alt="edit" />
+                	
                 </a>
-                
-                <a href="addCat.php" class="dashboard-module">
-                	<img src="/baitap/tuan3/templates/admin/images/Crystal_Clear_files.gif" width="64" height="64" alt="edit" />
-                	<span>Thêm danh mục</span>
+                <a href="" class="dashboard-module">
+                	<img src="/baitap/creative_onepage/templates/admin/images/Crystal_Clear_files.gif" width="64" height="64" alt="edit" />
+                	
                 </a>
                 <div style="clear: both"></div>
             </div> <!-- End .grid_7 -->
@@ -30,4 +29,4 @@
                 <div style="clear:both;"></div>
                 <div class="padding-bottom"></div>
             </div> <!-- End .grid_5 -->
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/tuan3/templates/admin/inc/footer.php';?>              
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/footer.php';?>              

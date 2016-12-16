@@ -1,10 +1,10 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/tuan3/templates/admin/inc/header.php';?>
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/tuan3/functions/dbconnect.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>
             <div class="bottom-spacing">
                   <!-- Button -->
                   <div class="float-left">
-                      <a href="addCatelogs.php" class="button">
-                      	<span>Thêm danh mục tin <img src="/baitap/tuan3/templates/admin/images/plus-small.gif" alt="Thêm tin"></span>
+                      <a href="addMenus.php" class="button">
+                      	<span>Thêm danh mục tin <img src="/baitap/creative_onepage/templates/admin/images/plus-small.gif" alt="Thêm tin"></span>
                       </a>
                   </div>
                   <div class="clear"></div>
@@ -27,19 +27,19 @@
                             </thead>
                             <tbody>
 							<?php
-								$query = "SELECT * FROM catelogs";
+								$query = "SELECT * FROM menus";
 								//thực hiện truy vấn
 								$result = $mysqli->query($query);
 								while($row = mysqli_fetch_assoc($result)){
-								$id_cat = $row['id_cate'];
-								$ten_dmt = $row['cate_name'];
+								$id_menu = $row['id_menus'];
+								$ten_dmt = $row['menu_name'];
 							?>
                                 <tr>
-                                    <td class="align-center"><?php echo $id_cat; ?></td>
+                                    <td class="align-center"><?php echo $id_menu; ?></td>
                                     <td><a href=""><?php echo $ten_dmt;?></a></td>
                                     <td align="center">
-                                        <a href="editCatelogs.php?id_cate=<?php echo $id_cat;?>">Sửa <img src="/baitap/tuan3/templates/admin/images/pencil.gif" alt="edit" /></a>
-                                        <a href="delCatelogs.php?id_cate=<?php echo $id_cat;?>">Xóa <img src="/baitap/tuan3/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
+                                        <a href="editMenus.php?id_menus=<?php echo $id_menu;?>">Sửa <img src="/baitap/creative_onepage/templates/admin/images/pencil.gif" alt="edit" /></a>
+                                        <a href="delMenus.php?id_menus=<?php echo $id_menu;?>">Xóa <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
                                     </td>
                                 </tr>
 							<?php 
@@ -51,4 +51,4 @@
                      </div> <!-- End .module-table-body -->
                 </div> <!-- End .module -->
 			</div> <!-- End .grid_12 -->
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/tuan3/templates/admin/inc/footer.php';?> 
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/footer.php';?> 
