@@ -5,14 +5,14 @@
 			$(document).ready(function(){
 			$("#news").validate({
 				rules: {
-					tendanhmuctin: {
+					category: {
 						required: true,
 					},
 					
 				},
 				messages: {
-					tendanhmuctin: {
-						required: "<p type = 'color:red'>Bạn chưa nhập danh mục</p>",
+					category: {
+						required: "<p type = 'color:red'>Require input</p>",
 					},
 				}
 			});
@@ -22,21 +22,21 @@
             <div class="grid_12">
             
                 <div class="module">
-                     <h2><span>Thêm danh mục tin(*)</span></h2>
+                     <h2><span>Add Category(*)</span></h2>
                         
                      <div class="module-body">
 					 <?php
-						if(isset($_POST['them'])){
+						if(isset($_POST['add'])){
 							$category = mysql_real_escape_string($_POST['category']);
 							//$tendanhmuctin = $mysqli->real_escape_string($_POST['tendanhmuctin']);
-							$query = "INSERT INTO category(name) VALUES('$tendanhmuctin') ";
+							$query = "INSERT INTO categorys(name) VALUES('$category')";
 							//thực hiện truy vấn
 							$result = $mysqli->query($query);
 							if($result) {
-								header("LOCATION: indexCategogy.php");
+								header("LOCATION: indexCategory.php");
 								exit();
 							} else {
-								echo "có lỗi xảy tra trong quá trình thêm danh mục tin";
+								echo "Error in progress add category!";
 							}
 						}
 					 ?>
@@ -46,8 +46,8 @@
                                 <input type="text" name="category" value="" class="input-medium" />
                             </p>
                             <fieldset>
-                                <input class="submit-green" name="them" type="submit" value="Thêm" /> 
-                                <input class="submit-gray" name="reset" type="reset" value="Nhập lại" />
+                                <input class="submit-green" name="add" type="submit" value="Add" /> 
+                                <input class="submit-gray" name="reset" type="reset" value="Reset" />
                             </fieldset>
                         </form>
                      </div> <!-- End .module-body -->
