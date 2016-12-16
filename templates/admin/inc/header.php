@@ -2,12 +2,12 @@
 	ob_start();
 	session_start();
 ?>
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/tuan3/functions/define.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/define.php'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>Creative OnePage Templates</title>
-        <link rel="stylesheet" type="text/css" href="/baitap/tuan3/templates/admin/css/styles.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="/baitap/creative_onepage/templates/admin/css/styles.css" media="screen" />
 		<script type = "text/javascript" src = "ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="jquery.validate.js"></script>
@@ -48,16 +48,7 @@
                     <div class="grid_12">
                         <div id="logo">
                             <ul id="nav">
-                                <li id="current"><a href="index.php">Quản trị</a></li>
-                                <?php
-									if(isset($_SESSION['id_user'])){
-										$fullname = $_SESSION['fullname'];
-										$id_user = $_SESSION['id_user'];
-								?>
-								<li><a href="editUser.php?id_user=<?php echo $id_user;?>">Tài khoản</a></li>
-									<?php }?>
-									
-									
+                                <li id="current"><a href="">Quản trị</a></li>
                             </ul>
                         </div><!-- End. #Logo -->
                     </div><!-- End. .grid_12-->
@@ -70,7 +61,7 @@
                 <div class="container_12">
                     <div class="grid_12">
                         <ul>
-                            <li><a href="indexCatelogs.php">Catelogs</a></li>
+                            <li><a href="indexMenus.php">Catelogs</a></li>
                             <li><a href="indexSliders.php">Sliders</a></li>
 							<li><a href="indexUser.php">Promotionals</a></li>
                             <li><a href="indexUser.php">Sigworks</a></li>
