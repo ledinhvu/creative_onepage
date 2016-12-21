@@ -24,20 +24,14 @@
 					<ul class="user-pro">
 					<?php
 						if(isset($_SESSION['id_user'])){
-							$fullname = $_SESSION['fullname'];
 							$id_user = $_SESSION['id_user'];
+                            $username= $_SESSION['username'];
 					?>		
 							<li><a href="logout.php">Logout</a></li>
-							<li>Chào, <a href="editUser.php?uid=<?php echo $id_user;?>"><?php echo $fullname;?></a></li>
+							<li>Chào, <?php echo $username;?></li>
                     <?php 
-						} else {
-					?>
-						<li><a href="login.php">Login</a></li>
-						<li>Chào,Khách </li>
-					<?php
-						}
-					?>
-						
+                        }
+                    ?>
                     </ul>	
                     </div>
                 </div>
@@ -49,9 +43,15 @@
                 <div class="container_12">
                     <div class="grid_12">
                         <div id="logo">
+                            <?php
+                            if(isset($_SESSION['id_user'])){
+                            ?>	
                             <ul id="nav">
-                                <li id="current"><a href="">Quản trị</a></li>
+                                <li id="current"><a href="">Manage</a></li>
                             </ul>
+                            <?php 
+                                 }
+                             ?>
                         </div><!-- End. #Logo -->
                     </div><!-- End. .grid_12-->
                     <div style="clear: both;"></div>
@@ -63,16 +63,22 @@
                 <div class="container_12">
                     <div class="grid_12">
                         <ul>
+                        <?php
+						if(isset($_SESSION['id_user'])){
+					    ?>	
                             <li><a href="indexMenus.php">Menus</a></li>
                             <li><a href="indexSliders.php">Sliders</a></li>
-							<li><a href="indexUser.php">Promotionals</a></li>
-                            <li><a href="indexUser.php">Couters</a></li>
+							<li><a href="indexPromotionals.php">Promotionals</a></li>
+                            <li><a href="indexCounters.php">Couters</a></li>
                             <li><a href="indexProject.php?page=1">Projects</a></li>
                             <li><a href="indexSpec.php?page=1">Specializations</a></li>
                             <li><a href="indexSpecIcon.php?page=1">Special icon</a></li>
                             <li><a href="indexCategory.php?page=1">Categorys</a></li>
                             <li><a href="indexUser.php">Users</a></li>
                             <li><a href="indexContact.php?page=1">Contacts</a></li>
+                            <?php 
+                                 }
+                             ?>
                         </ul>
                         
                     </div><!-- End. .grid_12-->

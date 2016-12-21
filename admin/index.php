@@ -1,4 +1,11 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>      
+<?php
+	if(!isset($_SESSION['id_user'])){
+		//chưa đăng nhập
+		header("location:login.php");
+		exit();
+	}
+?> 
             <!-- Dashboard icons -->
             <div class="grid_main_l">
             	<a href="" class="dashboard-module">

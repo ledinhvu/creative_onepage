@@ -10,8 +10,8 @@
             <div class="bottom-spacing">
                   <!-- Button -->
                   <div class="float-left">
-                      <a href="addMenus.php" class="button">
-                      	<span>Add Menus<img src="/baitap/creative_onepage/templates/admin/images/plus-small.gif" alt="Thêm tin"></span>
+                      <a href="addUser.php" class="button">
+                      	<span>Add User<img src="/baitap/creative_onepage/templates/admin/images/plus-small.gif" alt="Thêm user"></span>
                       </a>
                   </div>
                   <div class="clear"></div>
@@ -20,7 +20,7 @@
             <div class="grid_12">
                 <!-- Example table -->
                 <div class="module">
-                	<h2><span>List Menus</span></h2>
+                	<h2><span>List User</span></h2>
                     
                     <div class="module-table-body">
                     	<form action="">
@@ -28,25 +28,28 @@
                         	<thead>
                                 <tr>
                                     <th style="width:4%; text-align: center;">ID</th>
-                                    <th>Menu name</th>
+                                    <th>UserName</th>
+                                    <th>PassWord</th>
                                     <th style="width:11%; text-align: center;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
 							<?php
-								$query = "SELECT * FROM menus";
+								$query = "SELECT * FROM user";
 								//thực hiện truy vấn
 								$result = $mysqli->query($query);
 								while($row = mysqli_fetch_assoc($result)){
-								$id_menu = $row['id_menus'];
-								$ten_dmt = $row['menu_name'];
+								$id_user = $row['id_user'];
+								$username = $row['username'];
+                                $password = $row['password'];
 							?>
                                 <tr>
-                                    <td class="align-center"><?php echo $id_menu; ?></td>
-                                    <td><a href=""><?php echo $ten_dmt;?></a></td>
+                                    <td class="align-center"><?php echo $id_user; ?></td>
+                                    <td class="align-center"><?php echo $username;?></td>
+                                    <td class="align-center"><?php echo $password;?></td>
                                     <td align="center">
-                                        <a href="editMenus.php?id_menus=<?php echo $id_menu;?>">Edit<img src="/baitap/creative_onepage/templates/admin/images/pencil.gif" alt="edit" /></a>
-                                        <a href="delMenus.php?id_menus=<?php echo $id_menu;?>">Delete <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
+                                        <a href="editUser.php?id_user=<?php echo $id_user;?>">Edit<img src="/baitap/creative_onepage/templates/admin/images/pencil.gif" alt="edit" /></a>
+                                        <a href="delUser.php?id_user=<?php echo $id_user;?>">Delete <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
                                     </td>
                                 </tr>
 							<?php 
