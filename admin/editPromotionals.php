@@ -66,9 +66,24 @@
 								$time =time();
 								$ten_hinh = $ten_file.'_'.$time.'.'.$duoi_file;
 								$tmp_name = $_FILES['hinhanh']['tmp_name'];
-								$path = $_SERVER['DOCUMENT_ROOT'];
-								$path_upload = $path.'/baitap/creative_onepage/files/'.$ten_hinh;
-								$ketqua = move_uploaded_file($tmp_name,$path_upload);
+								$type=exif_imagetype($tmp_name);
+								if(($type == IMAGETYPE_GIF) OR ($type == IMAGETYPE_PNG) OR ($type == IMAGETYPE_JEPG)){
+									$path = $_SERVER['DOCUMENT_ROOT'];
+									$path_upload = $path.'/baitap/creative_onepage/files/'.$ten_hinh;
+									$ketqua = move_uploaded_file($tmp_name,$path_upload);
+								}else {
+									$ten_hinh = '';
+									$str1 = "UPDATE promotionals SET title ='$title1',detail='$detail1',job='$job1',
+                                    author='$author1',about_author='$about_author1',
+									img='$ten_hinh' WHERE id_pro = $id_pro";
+									$kq2 = $mysqli->query($str1);
+									if($kq2){
+										header("LOCATION:indexPromotionals.php");
+										exit();
+									}else{
+										echo "<strong style = 'color:red'>có lỗi khi sửa</strong>";
+									}
+								}
 								if($ketqua){
 									//thực hiện update
 									$str = "UPDATE promotionals SET title ='$title1',detail='$detail1',job='$job1',

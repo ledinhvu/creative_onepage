@@ -6,6 +6,18 @@
 		header("location:login.php");
 		exit();
 	}
+    $querySD 	= "SELECT COUNT(id_pro) AS 'sodong' FROM promotionals ";
+        $resultSD 	= $mysqli->query ( $querySD );
+        $arSD 		= mysqli_fetch_assoc( $resultSD );
+        $sodong 	= $arSD ['sodong'];
+        // tính số trang cần phân chia.
+        $row_count 	= ROW_COUNT;
+        $sotrang 	= ceil ( $sodong / $row_count );
+        $current_page = 1;
+        if (isset ( $_GET ['page'] )) {
+            $current_page = $_GET ['page'];
+        }
+        $offset = ($current_page - 1) * $row_count;
 ?>
             <div class="bottom-spacing">
                   <!-- Button -->
@@ -39,7 +51,7 @@
                             </thead>
                             <tbody>
 							<?php
-								$query = "SELECT * FROM promotionals";
+								$query = "SELECT * FROM promotionals ORDER BY id_pro DESC LIMIT $offset,$row_count";
 								//thực hiện truy vấn
 								$result = $mysqli->query($query);
 								while($row = mysqli_fetch_assoc($result)){
@@ -63,7 +75,7 @@
 											echo "Không có hình";
 										}else{
 									    ?>
-                                        <img src="<?php echo $path;?>" class="img" />
+                                        <img src="<?php echo $path;?>" class="img" style="width:100px" />
                                         <?php
                                             }
                                         ?>
@@ -84,5 +96,25 @@
                         </form>
                      </div> <!-- End .module-table-body -->
                 </div> <!-- End .module -->
+                <div class="pagination">
+                    <div class="numbers">
+                                        <?php
+                                        for($i = 1; $i <= $sotrang; $i ++) {
+                                            if ($i == $current_page) {
+                                                $active = "class = 'active'";
+                                            } else
+                                                $active = null;
+                                            ?>
+                                            <a href="indexPromotionals.php?page=<?php echo $i?>" <?php echo $active?>> 
+                                                <span>Trang:</span> 
+                                                <?php echo $i?>
+                                            </a> 
+                                                <?php if($i!=$sotrang){?>
+                                                <span>|</span> 
+                                                <?php }?>
+                                        <?php }?>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div
 			</div> <!-- End .grid_12 -->
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/footer.php';?> 

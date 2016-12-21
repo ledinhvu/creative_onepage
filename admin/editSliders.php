@@ -59,9 +59,24 @@
 								$time =time();
 								$ten_hinh = $ten_file.'_'.$time.'.'.$duoi_file;
 								$tmp_name = $_FILES['hinhanh']['tmp_name'];
-								$path = $_SERVER['DOCUMENT_ROOT'];
-								$path_upload = $path.'/baitap/creative_onepage/files/'.$ten_hinh;
-								$ketqua = move_uploaded_file($tmp_name,$path_upload);
+								$type=exif_imagetype($tmp_name);
+								if(($type == IMAGETYPE_GIF) OR ($type == IMAGETYPE_PNG) OR ($type == IMAGETYPE_JEPG)){
+									$path = $_SERVER['DOCUMENT_ROOT'];
+									$path_upload = $path.'/baitap/creative_onepage/files/'.$ten_hinh;
+									$ketqua = move_uploaded_file($tmp_name,$path_upload);
+								}else {
+									$ten_hinh = '';
+									$str1 = "UPDATE sliders SET title ='$title1',content='$content1',
+									img='$ten_hinh' WHERE id_sliders = $id_sliders";
+									$kq2 = $mysqli->query($str1);
+									if($kq2){
+										header("LOCATION:indexSliders.php");
+										exit();
+									}else{
+										echo "<strong style = 'color:red'>có lỗi khi sửa</strong>";
+									}
+								}
+								
 								if($ketqua){
 									//thực hiện update
 									$str = "UPDATE sliders SET title ='$title1',content='$content1',
