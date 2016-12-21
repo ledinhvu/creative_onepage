@@ -27,12 +27,12 @@
                             </thead>
                             <tbody>
 							<?php
-                require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/getpage.php';
-                $max_result = 10;
-                $index_row = $page*$max_result-$max_result;
-								$query = "SELECT * FROM categorys LIMIT $index_row, $max_result";
-								//thực hiện truy vấn
-                $index=1;
+                                require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/getpage.php';
+                                $max_result = 10;
+                                $index_row = $page*$max_result-$max_result;
+                                                $query = "SELECT * FROM categorys LIMIT $index_row, $max_result";
+                                                //thực hiện truy vấn
+                                $index=1;
 								$result = $mysqli->query($query);
 								while($row = mysqli_fetch_assoc($result)){
 								$id_cate = $row['id_cate'];
@@ -54,12 +54,12 @@
                                       <nav  class="text-right">
                                         <ul class="pagination">
                                         <?php
-                                      $querySD  = "SELECT COUNT(id_cate) AS 'sodong' FROM categorys ";
-                                      $resultSD  = $mysqli->query ( $querySD );
-                                      $arSD   = mysqli_fetch_assoc( $resultSD );
-                                      $total_row  = $arSD ['sodong'];
-                                      // $total_row = mysql_query('SELECT * FROM categorys');
-                                        require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/listpage.php';
+                                        $querySD  = "SELECT COUNT(id_cate) AS 'sodong' FROM categorys ";
+                                        $resultSD  = $mysqli->query ( $querySD );
+                                        $arSD   = mysqli_fetch_assoc( $resultSD );
+                                        $total_row  = $arSD ['sodong'];
+                                        // $total_row = mysql_query('SELECT * FROM categorys');
+                                         require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/listpage.php';
                                         ?>
                                         </ul>
                                       </nav>

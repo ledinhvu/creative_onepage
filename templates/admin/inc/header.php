@@ -8,7 +8,6 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>Creative OnePage Templates</title>
         <link rel="stylesheet" type="text/css" href="/baitap/creative_onepage/templates/admin/css/styles.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="/baitap/creative_onepage/templates/admin/css/bootstrap.min.css" media="screen" />
         <script src="/baitap/creative_onepage/templates/admin/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
 		<script type = "text/javascript" src = "ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="jquery-2.1.3.min.js"></script>
@@ -24,20 +23,14 @@
 					<ul class="user-pro">
 					<?php
 						if(isset($_SESSION['id_user'])){
-							$fullname = $_SESSION['fullname'];
 							$id_user = $_SESSION['id_user'];
+                            $username= $_SESSION['username'];
 					?>		
 							<li><a href="logout.php">Logout</a></li>
-							<li>Chào, <a href="editUser.php?uid=<?php echo $id_user;?>"><?php echo $fullname;?></a></li>
+							<li>Chào, <?php echo $username;?></li>
                     <?php 
-						} else {
-					?>
-						<li><a href="login.php">Login</a></li>
-						<li>Chào,Khách </li>
-					<?php
-						}
-					?>
-						
+                        }
+                    ?>
                     </ul>	
                     </div>
                 </div>
@@ -49,9 +42,15 @@
                 <div class="container_12">
                     <div class="grid_12">
                         <div id="logo">
+                            <?php
+                            if(isset($_SESSION['id_user'])){
+                            ?>	
                             <ul id="nav">
-                                <li id="current"><a href="">Quản trị</a></li>
+                                <li id="current"><a href="">Manage</a></li>
                             </ul>
+                            <?php 
+                                 }
+                             ?>
                         </div><!-- End. #Logo -->
                     </div><!-- End. .grid_12-->
                     <div style="clear: both;"></div>
@@ -63,16 +62,22 @@
                 <div class="container_12">
                     <div class="grid_12">
                         <ul>
+                        <?php
+						if(isset($_SESSION['id_user'])){
+					    ?>	
                             <li><a href="indexMenus.php">Menus</a></li>
                             <li><a href="indexSliders.php">Sliders</a></li>
-							<li><a href="indexUser.php">Promotionals</a></li>
-                            <li><a href="indexUser.php">Couters</a></li>
+							<li><a href="indexPromotionals.php">Promotionals</a></li>
+                            <li><a href="indexCounters.php">Counters</a></li>
                             <li><a href="indexUser.php">Progressbar</a></li>
                             <li><a href="indexProject.php">Projects</a></li>
                             <li><a href="indexUser.php">Specialtions</a></li>
                             <li><a href="indexSpectialIcon.php">Special icon</a></li>
                             <li><a href="indexCategory.php?page=1">Categorys</a></li>
                             <li><a href="indexUser.php">Users</a></li>
+                            <?php 
+                                 }
+                             ?>
                         </ul>
                         
                     </div><!-- End. .grid_12-->
