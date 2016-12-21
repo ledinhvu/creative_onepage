@@ -31,8 +31,8 @@ if(isset($_SESSION['id_user'])){
 <div class="grid_12">
 
 	<div class="module">
-		<h2>
-			<span>Login</span>
+		<h2 style="margin-top: 0px; margin-bottom: 15px;">
+			<span >Login</span>
 		</h2>
 		<div class="module-body">
 		<?php

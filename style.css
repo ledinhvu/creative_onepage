@@ -54,7 +54,7 @@ body {
 .signle-slider .carousel-caption{
     position: absolute;
     bottom: 20%;
-    background-image: url('img/glass_block.png');
+    background-color: rgba(0,0,0,0.7);
     top: 0;
     bottom: 0;
     left: 0;

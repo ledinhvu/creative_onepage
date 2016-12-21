@@ -11,7 +11,7 @@
             <div class="grid_12">
             
                 <div class="module">
-                     <h2><span>Edit Name</span></h2>
+                     <h2 style="margin-top: 0px; margin-bottom: 15px;"><span>Edit Name</span></h2>
                         
                      <div class="module-body">
 					 <?php
