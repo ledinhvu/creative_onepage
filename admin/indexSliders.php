@@ -31,7 +31,7 @@
                                     <th style="width:20%; text-align: center;">Title</th>
                                     <th style="width:30%; text-align: center;">Content</th>
                                     <th style="width:200px; text-align: center;">Images</th>
-                                    <th style="width:11%; text-align: center;">Active</th>
+                                    <th style="width:15%; text-align: center;">Active</th>
                                 </tr>
                             </thead>
                             <tbody>

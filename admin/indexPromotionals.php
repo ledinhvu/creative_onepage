@@ -45,8 +45,8 @@
                                     <th style="width:15%; text-align: center;">Images</th>
                                     <th style="width:10%; text-align: center;">Author</th>
                                     <th style="width:10%; text-align: center;">Job</th>
-                                    <th style="width:20%; text-align: center;">About Author</th>
-                                    <th style="width:11%; text-align: center;">Active</th>
+                                    <th style="width:16%; text-align: center;">About Author</th>
+                                    <th style="width:15%; text-align: center;">Active</th>
                                 </tr>
                             </thead>
                             <tbody>

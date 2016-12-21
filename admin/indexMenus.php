@@ -29,7 +29,7 @@
                                 <tr>
                                     <th style="width:4%; text-align: center;">ID</th>
                                     <th>Menu name</th>
-                                    <th style="width:11%; text-align: center;">Action</th>
+                                    <th style="width:15%; text-align: center;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

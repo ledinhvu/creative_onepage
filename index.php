@@ -216,7 +216,7 @@
 										<div class="sigworks-group">
 											<?php 
 												$mysqliicon = "SELECT spi.name AS spiname,spi.caption AS spicap FROM specialization AS sp INNER JOIN spec_rela_n AS sr 
-												ON sp.id_special=sr.id_special INNER JOIN special_icon AS spi ON spi.id_spe_icon = sr.id_spe_icon 
+												ON sp.id_special=sr.id_special INNER JOIN special_icon AS spi ON spi.id_spe_icon = sr.id_spec_icon 
 												WHERE sp.id_special=1 ";
 												$resulticon= $mysqli->query ( $mysqliicon );
 												while ( $aricon = mysqli_fetch_assoc ( $resulticon ) ) {
@@ -391,7 +391,7 @@
 							$ctemail = mysql_real_escape_string($_POST['email']);
 							$ctcompany = mysql_real_escape_string($_POST['company']);
 							$ctcontent = mysql_real_escape_string($_POST['content']);
-							$queryx = "INSERT INTO contact(name,email_address,name_company,content) 
+							$queryx = "INSERT INTO contact(name,email,company,content) 
 							VALUES('$ctname','$ctemail','$ctcompany','$ctcontent')";
 							//thực hiện truy vấn
 							$resultx = $mysqli->query($queryx);
