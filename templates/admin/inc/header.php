@@ -9,10 +9,10 @@
 		<title>Creative OnePage Templates</title>
         <link rel="stylesheet" type="text/css" href="/baitap/creative_onepage/templates/admin/css/styles.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="/baitap/creative_onepage/templates/admin/css/bootstrap.min.css" media="screen" />
-        <script src="/baitap/creative_onepage/templates/admin/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
 		<script type = "text/javascript" src = "ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="jquery.validate.js"></script>
+        <script src="../templates/admin/js/bootstrap.min.js"></script>
 	</head>
 	<body>
     	<!-- Header -->
@@ -67,12 +67,12 @@
                             <li><a href="indexSliders.php">Sliders</a></li>
 							<li><a href="indexUser.php">Promotionals</a></li>
                             <li><a href="indexUser.php">Couters</a></li>
-                            <li><a href="indexUser.php">Progressbar</a></li>
-                            <li><a href="indexProject.php">Projects</a></li>
-                            <li><a href="indexUser.php">Specialtions</a></li>
-                            <li><a href="indexSpectialIcon.php">Special icon</a></li>
+                            <li><a href="indexProject.php?page=1">Projects</a></li>
+                            <li><a href="indexSpec.php?page=1">Specializations</a></li>
+                            <li><a href="indexSpecIcon.php?page=1">Special icon</a></li>
                             <li><a href="indexCategory.php?page=1">Categorys</a></li>
                             <li><a href="indexUser.php">Users</a></li>
+                            <li><a href="indexContact.php?page=1">Contacts</a></li>
                         </ul>
                         
                     </div><!-- End. .grid_12-->
