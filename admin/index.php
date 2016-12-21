@@ -22,7 +22,7 @@
             <!-- Account overview -->
             <div class="grid_main_r">
                 <div class="module">
-                        <h2><span>Quản trị hệ thống</span></h2>
+                        <h2 style="margin-top: 0px; margin-bottom: 15px;"><span>Quản trị hệ thống</span></h2>
                         
                         <div class="module-body">
                         	<p class="p">
