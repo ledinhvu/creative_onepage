@@ -40,7 +40,7 @@
 							//thực hiện truy vấn
 							$result = $mysqli->query($query);
 							if($result) {
-								header("LOCATION: indexMenus.php");
+								header("LOCATION: indexMenus.php?page=1");
 								exit();
 							} else {
 								echo "có lỗi xảy tra trong quá trình thêm danh mục tin";

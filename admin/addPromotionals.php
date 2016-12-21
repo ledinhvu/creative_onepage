@@ -62,7 +62,7 @@
 										
 								$result = $mysqli->query($str_query);
 								if($result){
-									header("LOCATION: indexPromotionals.php");
+									header("LOCATION: indexPromotionals.php?page=1");
 									exit();
 								}else{
 									echo "Có lỗi khi thêm";

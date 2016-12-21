@@ -28,7 +28,7 @@
                             $username= $_SESSION['username'];
 					?>		
 							<li><a href="logout.php">Logout</a></li>
-							<li>Chào, <?php echo $username;?></li>
+							<li>Hello, <?php echo $username;?></li>
                     <?php 
                         }
                     ?>
@@ -66,9 +66,9 @@
                         <?php
 						if(isset($_SESSION['id_user'])){
 					    ?>	
-                            <li><a href="indexMenus.php">Menus</a></li>
+                            <li><a href="indexMenus.php?page=1">Menus</a></li>
                             <li><a href="indexSliders.php">Sliders</a></li>
-							<li><a href="indexPromotionals.php">Promotionals</a></li>
+							<li><a href="indexPromotionals.php?page=1">Promotionals</a></li>
                             <li><a href="indexCounters.php">Couters</a></li>
                             <li><a href="indexProject.php?page=1">Projects</a></li>
                             <li><a href="indexSpec.php?page=1">Specializations</a></li>

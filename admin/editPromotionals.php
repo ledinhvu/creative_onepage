@@ -45,7 +45,7 @@
 								 WHERE id_pro=$id_pro";
 								$kq1 = $mysqli->query($str);
 								if($kq1){
-									header("LOCATION:indexPromotionals.php");
+									header("LOCATION:indexPromotionals.php?page=1");
 									exit();
 								}else{
 									echo "Có lỗi khi sửa";

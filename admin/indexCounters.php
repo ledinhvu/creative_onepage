@@ -27,11 +27,12 @@
                         <table id="myTable" class="tablesorter">
                         	<thead>
                                 <tr>
-                                    <th style="width:4%; text-align: center;">ID</th>
+                                    <th style="width:4%; text-align: center;">No.</th>
                                     <th >Counters name</th>
                                     <th>Value </th>
                                     <th>Image</th>
-                                    <th style="width:15%; text-align: center;">Action</th>
+                                    <th style="width:15%; text-align: center;">Edit</th>
+                                    <th style="width:15%; text-align: center;">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,6 +40,7 @@
 								$query = "SELECT * FROM counters";
 								//thực hiện truy vấn
 								$result = $mysqli->query($query);
+                                $index=1;
 								while($row = mysqli_fetch_assoc($result)){
 								$id_count = $row['id_count'];
 								$ten_count = $row['count_name'];
@@ -47,7 +49,7 @@
                                  $path = '/baitap/creative_onepage/files/'.$img_count;
 							?>
                                 <tr>
-                                    <td class="align-center"><?php echo $id_count; ?></td>
+                                    <td class="align-center"><?php echo $index++; ?></td>
                                     <td><?php echo $ten_count;?></td>
                                     <td><?php echo $value_count;?></td>
                                     <td style="text-align:center">
@@ -63,7 +65,9 @@
                                     </td>
                                     <td align="center">
                                         <a href="editCounters.php?id_count=<?php echo $id_count;?>">Edit<img src="/baitap/creative_onepage/templates/admin/images/pencil.gif" alt="edit" /></a>
-                                        <a href="delCounters.php?id_count=<?php echo $id_count;?>">Delete <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
+                                    </td>
+                                    <td align="center">
+                                       <a href="delCounters.php?id_count=<?php echo $id_count;?>">Delete <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
                                     </td>
                                 </tr>
 							<?php 

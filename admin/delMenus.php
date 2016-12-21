@@ -14,7 +14,7 @@
 				$result = $mysqli->query($query);
 				
 				if($result){
-					header("LOCATION: indexMenus.php");
+					header("LOCATION: indexMenus.php?page=1");
 					exit();
 				} else {
 					echo "<strong type='color:red'>Có lỗi trong quá trình xóa</strong>";

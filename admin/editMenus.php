@@ -27,7 +27,7 @@
 								id_menus =$id_menu LIMIT 1";
 								$ketqua = $mysqli->query($str);
 								if($ketqua) {
-									header("LOCATION: indexMenus.php");
+									header("LOCATION: indexMenus.php?page=1");
 									exit();
 								}else {
 									echo "<strong>Có lỗi xảy ra trong quá trình sửa </strong>";

@@ -27,11 +27,12 @@
                         <table id="myTable" class="tablesorter">
                         	<thead>
                                 <tr>
-                                    <th style="width:4%; text-align: center;">ID</th>
+                                    <th style="width:4%; text-align: center;">No.</th>
                                     <th style="width:20%; text-align: center;">Title</th>
                                     <th style="width:30%; text-align: center;">Content</th>
                                     <th style="width:200px; text-align: center;">Images</th>
-                                    <th style="width:15%; text-align: center;">Active</th>
+                                    <th style="width:15%; text-align: center;">Edit</th>
+                                    <th style="width:15%; text-align: center;">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,6 +40,7 @@
 								$query = "SELECT * FROM sliders";
 								//thực hiện truy vấn
 								$result = $mysqli->query($query);
+                                $index=1;
 								while($row = mysqli_fetch_assoc($result)){
 								$id_slide = $row['id_sliders'];
 								$title = $row['title'];
@@ -47,7 +49,7 @@
                                 $path = '/baitap/creative_onepage/files/'.$img;
 							?>
                                 <tr>
-                                    <td class="align-center"><?php echo $id_slide; ?></td>
+                                    <td class="align-center"><?php echo $index++; ?></td>
                                     <td><?php echo $title;?></td>
                                     <td><?php echo $content;?></td>
                                     <td style="text-align:center">
@@ -63,6 +65,8 @@
                                     </td>
                                     <td align="center">
                                         <a href="editSliders.php?id_sliders=<?php echo $id_slide;?>">Edit <img src="/baitap/creative_onepage/templates/admin/images/pencil.gif" alt="edit" /></a>
+                                    </td>
+                                    <td align="center">
                                         <a href="delSliders.php?id_sliders=<?php echo $id_slide;?>">Delete <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
                                     </td>
                                 </tr>

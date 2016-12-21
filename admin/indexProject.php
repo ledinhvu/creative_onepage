@@ -26,7 +26,7 @@
         <table id="myTable" class="tablesorter">
           <thead>
             <tr>
-              <th style="width:4%; text-align: center;">STT</th>
+              <th style="width:4%; text-align: center;">No.</th>
               <th style="width:30%; text-align: center;">Name Projects</th>
               <th style="width:20%; text-align: center;">Name Categorys</th>
               <th style="width:200px; text-align: center;">Images</th>
