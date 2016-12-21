@@ -12,33 +12,33 @@
             <div class="grid_12">
             
                 <div class="module">
-                     <h2 style="margin-top: 0px; margin-bottom: 15px;"><span>Edit Sliders</span></h2>
+                     <h2 style="margin-top: 0px; margin-bottom: 15px;"><span>Edit Counters</span></h2>
                         
                      <div class="module-body">
 					 <?php
-						$id_sliders = 0;
-						if(isset($_GET['id_sliders'])){
-						$id_sliders = $_GET['id_sliders'];}
+						$id_count = 0;
+						if(isset($_GET['id_count'])){
+						$id_count = $_GET['id_count'];}
 						
-						$str_query = "SELECT * FROM sliders WHERE id_sliders=$id_sliders";
+						$str_query = "SELECT * FROM counters WHERE id_count=$id_count";
 						
 						$kqua = $mysqli->query($str_query);
 						$arr_TT = mysqli_fetch_assoc($kqua);
-						$title = htmlspecialchars($arr_TT['title']);
-						$content = $arr_TT['content'];
+						$countname = htmlspecialchars($arr_TT['count_name']);
+						$value = $arr_TT['value'];
 						$hinh_anh = $arr_TT['img'];
 						$path = '/baitap/creative_onepage/files/'.$hinh_anh;
 						if(isset($_POST['sua'])){
-							$title1 =$mysqli->real_escape_string($_POST['title1']);
-							$content1 = $mysqli->real_escape_string($_POST['content1']);
+							$countname1 =$mysqli->real_escape_string($_POST['title1']);
+							$value1 = $mysqli->real_escape_string($_POST['content1']);
 							$name = $_FILES['hinhanh']['name'];
 							if($name == NULL ){
 								//không sửa hình
-								$str = "UPDATE sliders SET title ='$title1',content='$content1'
-								 WHERE id_sliders=$id_sliders";
+								$str = "UPDATE counters SET count_name ='$countname1',value='$value1'
+								 WHERE id_count=$id_count";
 								$kq1 = $mysqli->query($str);
 								if($kq1){
-									header("LOCATION:indexSliders.php");
+									header("LOCATION:indexCounters.php");
 									exit();
 								}else{
 									echo "Có lỗi khi sửa";
@@ -67,11 +67,11 @@
 									$ketqua = move_uploaded_file($tmp_name,$path_upload);
 								}else {
 									$ten_hinh = '';
-									$str1 = "UPDATE sliders SET title ='$title1',content='$content1',
-									img='$ten_hinh' WHERE id_sliders = $id_sliders";
+									$str1 = "UPDATE counters SET count_name ='$countname1',value='$value1',
+									img='$ten_hinh' WHERE id_count = $id_count";
 									$kq2 = $mysqli->query($str1);
 									if($kq2){
-										header("LOCATION:indexSliders.php");
+										header("LOCATION:indexCounters.php");
 										exit();
 									}else{
 										echo "<strong style = 'color:red'>có lỗi khi sửa</strong>";
@@ -80,11 +80,11 @@
 								
 								if($ketqua){
 									//thực hiện update
-									$str = "UPDATE sliders SET title ='$title1',content='$content1',
-									img='$ten_hinh' WHERE id_sliders = $id_sliders";
+									$str = "UPDATE counters SET count_name ='$countname1',value='$value1',
+									img='$ten_hinh' WHERE id_count = $id_count";
 									$kq1 = $mysqli->query($str);
 									if($kq1){
-										header("LOCATION:indexSliders.php");
+										header("LOCATION:indexCounters.php");
 										exit();
 									}else{
 										echo "<strong style = 'color:red'>có lỗi khi sửa</strong>";
@@ -100,10 +100,10 @@
 							$path = $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/files/'.$hinh_anh;
 						    $result = unlink("$path");
 							if($result){//b2 thực hiện update cột picture trong db
-								$sql = "UPDATE sliders SET img = '' WHERE id_sliders=$id_sliders";
+								$sql = "UPDATE counters SET img = '' WHERE id_count=$id_count";
 								$ketqua2 = $mysqli->query($sql);
 								if($ketqua2){
-								$url = "editSliders.php?id_sliders={$id_sliders}";
+								$url = "editCounters.php?id_count={$id_count}";
 									header("LOCATION:{$url}");
 									exit();
 								}else {
@@ -140,12 +140,12 @@
 </script>
                         <form action="" method="POST" enctype="multipart/form-data" id="frm-edit">
                             <p>
-                                <label>Title(*)</label>
-                                <input type="text" name="title1" value="<?php echo $title;?>" class="input-medium" />
+                                <label>Counters Name(*)</label>
+                                <input type="text" name="title1" value="<?php echo $countname;?>" class="input-medium" />
                             </p>
                             <p>
-                                <label>Content(*)</label>
-                                <input type="text" name="content1" value="<?php echo $content;?>" class="input-medium" />
+                                <label>Value(*)</label>
+                                <input type="number" name="content1" value="<?php echo $value;?>" class="input-medium" />
                             </p>
 							<?php
 								if($hinh_anh !=NULL){

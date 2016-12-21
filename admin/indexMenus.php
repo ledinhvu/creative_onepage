@@ -29,7 +29,7 @@
                                 <tr>
                                     <th style="width:4%; text-align: center;">ID</th>
                                     <th>Menu name</th>
-                                    <th style="width:11%; text-align: center;">Action</th>
+                                    <th style="width:15%; text-align: center;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,7 +43,7 @@
 							?>
                                 <tr>
                                     <td class="align-center"><?php echo $id_menu; ?></td>
-                                    <td><a href=""><?php echo $ten_dmt;?></a></td>
+                                    <td><?php echo $ten_dmt;?></td>
                                     <td align="center">
                                         <a href="editMenus.php?id_menus=<?php echo $id_menu;?>">Edit<img src="/baitap/creative_onepage/templates/admin/images/pencil.gif" alt="edit" /></a>
                                         <a href="delMenus.php?id_menus=<?php echo $id_menu;?>">Delete <img src="/baitap/creative_onepage/templates/admin/images/bin.gif" width="16" height="16" alt="delete" /></a>
