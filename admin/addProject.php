@@ -1,7 +1,13 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?> 
 
-<script type = "text/javascript" src = "ckeditor/ckeditor.js"></script>
+<?php
+	if(!isset($_SESSION['id_user'])){
+		//chưa đăng nhập
+		header("location:login.php");
+		exit();
+	}
+?>
 <!-- Form elements -->    
 <div class="grid_12">
     <div class="module">

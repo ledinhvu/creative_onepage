@@ -216,7 +216,7 @@
 										<div class="sigworks-group">
 											<?php 
 												$mysqliicon = "SELECT spi.name AS spiname,spi.caption AS spicap FROM specialization AS sp INNER JOIN spec_rela_n AS sr 
-												ON sp.id_special=sr.id_special INNER JOIN special_icon AS spi ON spi.id_spe_icon = sr.id_spe_icon 
+												ON sp.id_special=sr.id_special INNER JOIN special_icon AS spi ON spi.id_spe_icon = sr.id_spec_icon 
 												WHERE sp.id_special=1 ";
 												$resulticon= $mysqli->query ( $mysqliicon );
 												while ( $aricon = mysqli_fetch_assoc ( $resulticon ) ) {
@@ -385,26 +385,8 @@
             </div><!-- /.row -->
             <div class="row">
                 <div class="">
-					<?php 
-						if(isset($_POST['send'])){
-							$ctname = mysql_real_escape_string($_POST['name']);
-							$ctemail = mysql_real_escape_string($_POST['email']);
-							$ctcompany = mysql_real_escape_string($_POST['company']);
-							$ctcontent = mysql_real_escape_string($_POST['content']);
-							$queryx = "INSERT INTO contact(name,email_address,name_company,content) 
-							VALUES('$ctname','$ctemail','$ctcompany','$ctcontent')";
-							//thực hiện truy vấn
-							$resultx = $mysqli->query($queryx);
-							if($resultx) {
-								header("LOCATION: index.php");
-								exit();
-							} else {
-								echo "Add contact error";
-							}
-						}
-					?>
                     <div class="col-lg-8 col-sm-8 col-sm-6 col-xs-12">
-                        <form method="POST" action="" accept-charset="UTF-8" class="frm-show-form" id="form-contacts" novalidate="novalidate">
+                        <form method="POST" action="handleSend.php" accept-charset="UTF-8" class="frm-show-form" id="form-contacts" novalidate="novalidate">
                         <input name="_token" type="hidden" value="5Z5oYKewpvNiQOIfyl85Wdz2PGUiyYpwLGWzGkWB">
                         <div class="frm_forms " id="frm_form_3_container">
                             <div class="frm_form_field form-field col-sm-6">
@@ -465,6 +447,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="admin/jquery.validate.js"></script>
 	<!-- Google maps API -->
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBEwv9OhddUeRUq34CYcw9QeQkjqQIPzno&callback=initMap"></script>
 	<script>
@@ -486,6 +469,45 @@
 		marker.setMap(map);
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);      
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$("#form-contacts").validate({
+			rules: {
+				name: {
+					required: true,
+					maxlength: 50,
+				},
+				email: {
+					required: true,
+					email: true,
+				},
+				company: {
+					required: true,
+					maxlength: 30
+				},
+				content: {
+					required: true,
+					maxlength: 1000
+				},
+			},
+			messages: {
+				name: {
+					required: "<p style='color:red'>Require input</p>",
+				},
+				email: {
+					required: "<p style='color:red'>Require input</p>",
+					email: "<p style='color:red'>Format false</p>",
+				},
+				company: {
+					required: "<p style='color:red'>Require input</p>",
+				},
+				content: {
+					required: "<p style='color:red'>Require input</p>",
+				},
+			}
+		});
+	});
 	</script>	
 </body>
 </html>

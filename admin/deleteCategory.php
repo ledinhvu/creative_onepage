@@ -1,6 +1,12 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>
-
+<?php
+	if(!isset($_SESSION['id_user'])){
+		//chưa đăng nhập
+		header("location:login.php");
+		exit();
+	}
+?>
     <?php
 		$id_cate = $_GET['id_cate'];
 		if($id_cate!=null){

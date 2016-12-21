@@ -1,5 +1,12 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>           
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>
+<?php
+  if(!isset($_SESSION['id_user'])){
+    //chưa đăng nhập
+    header("location:login.php");
+    exit();
+  }
+?>           
   <div class="grid_12">
       <!-- Example table -->
         <div class="module">
