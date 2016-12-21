@@ -58,22 +58,36 @@
 						$time =time();
 						$ten_hinh = $ten_file.'_'.$time.'.'.$duoi_file;
 						$tmp_name = $_FILES['hinhanh']['tmp_name'];
-						$path = $_SERVER['DOCUMENT_ROOT'];
-						$path_upload = $path.'/baitap/creative_onepage/files/'.$ten_hinh;
-						$ketqua = move_uploaded_file($tmp_name,$path_upload);
-						if($ketqua){
-							//thực hiện update
-							$str = "UPDATE projects SET projects_name='$project',id_cate='$id_cate',
+						$type=exif_imagetype($tmp_name);
+						if(($type == IMAGETYPE_GIF) || ($type == IMAGETYPE_PNG) || ($type == IMAGETYPE_JPEG)){
+							$path = $_SERVER['DOCUMENT_ROOT'];
+							$path_upload = $path.'/baitap/creative_onepage/files/'.$ten_hinh;
+							$ketqua = move_uploaded_file($tmp_name,$path_upload);
+							if($ketqua){
+								//thực hiện update
+								$str = "UPDATE projects SET projects_name='$project',id_cate='$id_cate',
 									img='$ten_hinh' WHERE id_projects = $id_project";
-							$kq1 = $mysqli->query($str);
-							if($kq1){
+								$kq1 = $mysqli->query($str);
+								if($kq1){
+									header("LOCATION:indexProject.php?page=1");
+									exit();
+								}else{
+									echo "<strong style = 'color:red'>error in progress edit</strong>";
+								}					
+							}else{
+								echo "<strong style = 'color:red'>error in progress edit image</srong> ";
+							}
+						}else {
+							$ten_hinh = '';
+							$str1 = "UPDATE projects SET projects_name='$project',id_cate='$id_cate',
+									img='$ten_hinh' WHERE id_projects = $id_project";
+							$kq2 = $mysqli->query($str1);
+							if($kq2){
 								header("LOCATION:indexProject.php?page=1");
 								exit();
 							}else{
 								echo "<strong style = 'color:red'>error in progress edit</strong>";
-							}					
-						}else{
-							echo "<strong style = 'color:red'>error in progress edit image</srong> ";
+							}
 						}
 					}
 				}
@@ -100,7 +114,7 @@
         <form action="" method="POST" enctype="multipart/form-data" id="frm-edit">
             <p>
                 <label>Name Project(*)</label>
-                input type="text" name="project" value="<?php echo $name_project;?>" class="input-medium" />
+                <input type="text" name="project" value="<?php echo $name_project;?>" class="input-medium" />
             </p>
             <p>
                 <label>Name Category(*)</label>

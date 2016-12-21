@@ -42,9 +42,14 @@
 					$ten_hinh = $ten_file.'_'.$time.'.'.$duoi_file;
 
 					$tmp_name = $_FILES['image']['tmp_name'];
-					$path = $_SERVER['DOCUMENT_ROOT'];
-					$path_upload = $path.'/baitap/creative_onepage/files/'.$ten_hinh;
-					$ketqua = move_uploaded_file($tmp_name,$path_upload);
+					$type=exif_imagetype($tmp_name);
+						if(($type == IMAGETYPE_GIF) OR ($type == IMAGETYPE_PNG) OR ($type == IMAGETYPE_JEPG)){
+							$path = $_SERVER['DOCUMENT_ROOT'];
+							$path_upload = $path.'/baitap/creative_onepage/files/'.$ten_hinh;
+							$ketqua = move_uploaded_file($tmp_name,$path_upload);
+						}else {
+							$ten_hinh = '';
+						}
 				} else {
 					$ten_hinh = '';
 				}
