@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
+htmlentities<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>
 <?php
 	if(!isset($_SESSION['id_user'])){
@@ -34,9 +34,9 @@
 							}
 							if(isset($_POST['edit'])){
 								//get information from feild when has one event submit
-								$title = mysql_real_escape_string($_POST['title']);
-								$content = mysql_real_escape_string($_POST['content']);
-								$value = mysql_real_escape_string($_POST['value']);
+								$title = htmlentities($_POST['title']);
+								$content = htmlentities($_POST['content']);
+								$value = htmlentities($_POST['value']);
 								//update information in table specialization
 								$str = "UPDATE specialization SET title='$title',content='$content',value='$value' WHERE
 								id_special =$id_spec LIMIT 1";

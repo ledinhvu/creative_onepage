@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
+htmlentities<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>
 <?php
 	if(!isset($_SESSION['id_user'])){
@@ -39,8 +39,8 @@
                      <div class="module-body">
 					 <?php
 						if(isset($_POST['them'])){
-							$username = mysql_real_escape_string($_POST['username']);
-                            $password = mysql_real_escape_string($_POST['password']);
+							$username = htmlentities($_POST['username']);
+                            $password = htmlentities($_POST['password']);
                             $password_news = md5($password);
 							//$tendanhmuctin = $mysqli->real_escape_string($_POST['tendanhmuctin']);
                             $query = "SELECT * FROM user WHERE username = '$username'";

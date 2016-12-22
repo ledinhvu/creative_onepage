@@ -1,13 +1,13 @@
-<?php
+htmlentities<?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php';
 require_once "vendor/autoload.php";
 
 if(isset($_POST['send'])) {
 	//get infor
-	$name = mysql_real_escape_string($_POST['name']);
-	$email = mysql_real_escape_string($_POST['email']);
-	$company = mysql_real_escape_string($_POST['company']);
-	$content = mysql_real_escape_string($_POST['content']);
+	$name = htmlentities($_POST['name']);
+	$email = htmlentities($_POST['email']);
+	$company = htmlentities($_POST['company']);
+	$content = htmlentities($_POST['content']);
 
 	//send mail use mothod stmp
 	$mail = new PHPMailer;

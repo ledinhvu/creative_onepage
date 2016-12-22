@@ -18,8 +18,8 @@
                      <div class="module-body">
 					 <?php
 						if(isset($_POST['them'])){
-							$title = $mysqli->real_escape_string($_POST['title']);
-							$content = $mysqli->real_escape_string($_POST['title']);
+							$title = $mysqli->htmlentities($_POST['title']);
+							$content = $mysqli->htmlentities($_POST['title']);
 			
 							
 							$name = $_FILES['hinhanh']['name'];

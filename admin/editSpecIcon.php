@@ -23,8 +23,8 @@
 				$name_caption=$arr_Cat['caption'];
 				if(isset($_POST['edit'])){
 					//get information from feilds when submit
-					$name = $_POST['name'];
-					$caption = $_POST['caption'];
+					$name = htmlentities($_POST['name']);
+					$caption = htmlentities($_POST['caption']);
 					//Update
 					$str = "UPDATE special_icon SET name = '$name', caption='$caption' WHERE
 									id_spe_icon =$id_spec_icon LIMIT 1";

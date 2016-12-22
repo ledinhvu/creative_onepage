@@ -22,7 +22,7 @@
 							$arr_Cat = mysqli_fetch_assoc($result);
 							$ten_dmt = $arr_Cat['menu_name'];
 							if(isset($_POST['sua'])){
-								$tendanhmuctin = $_POST['tendanhmuctin'];
+								$tendanhmuctin = htmlentities($_POST['tendanhmuctin']);
 								$str = "UPDATE menus SET menu_name = '$tendanhmuctin' WHERE
 								id_menus =$id_menu LIMIT 1";
 								$ketqua = $mysqli->query($str);

@@ -32,11 +32,11 @@
                         $about_author = $arr_TT['about_author'];
 						$path = '/baitap/creative_onepage/files/'.$hinh_anh;
 						if(isset($_POST['sua'])){
-							$title1 =$mysqli->real_escape_string($_POST['title1']);
-							$detail1 = $mysqli->real_escape_string($_POST['detail1']);
-                            $author1 = $mysqli->real_escape_string($_POST['author1']);
-                            $job1 = $mysqli->real_escape_string($_POST['job1']);
-                            $about_author1 = $mysqli->real_escape_string($_POST['about_author1']);
+							$title1 =$mysqli->htmlentities($_POST['title1']);
+							$detail1 = $mysqli->htmlentities($_POST['detail1']);
+                            $author1 = $mysqli->htmlentities($_POST['author1']);
+                            $job1 = $mysqli->htmlentities($_POST['job1']);
+                            $about_author1 = $mysqli->htmlentities($_POST['about_author1']);
 							$name = $_FILES['hinhanh']['name'];
 							if($name == NULL ){
 								//không sửa hình

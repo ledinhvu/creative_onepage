@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
+htmlentities<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>
 <?php
 	if(!isset($_SESSION['id_user'])){
@@ -56,9 +56,9 @@
 				<?php
 					if(isset($_POST['add'])){
 						//get information from feild input when submit
-						$title = mysql_real_escape_string($_POST['title']);
-						$content = mysql_real_escape_string($_POST['content']);
-						$value = mysql_real_escape_string($_POST['value']);
+						$title = htmlentities($_POST['title']);
+						$content = htmlentities($_POST['content']);
+						$value = htmlentities($_POST['value']);
 						//insert 3 informations to table specialization
 						$query = "INSERT INTO specialization(title,content,value) VALUES('$title','$content','$value')";
 						$result = $mysqli->query($query); 

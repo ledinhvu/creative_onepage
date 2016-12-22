@@ -29,8 +29,8 @@
 						$hinh_anh = $arr_TT['img'];
 						$path = '/baitap/creative_onepage/files/'.$hinh_anh;
 						if(isset($_POST['sua'])){
-							$title1 =$mysqli->real_escape_string($_POST['title1']);
-							$content1 = $mysqli->real_escape_string($_POST['content1']);
+							$title1 =$mysqli->htmlentities($_POST['title1']);
+							$content1 = $mysqli->htmlentities($_POST['content1']);
 							$name = $_FILES['hinhanh']['name'];
 							if($name == NULL ){
 								//không sửa hình

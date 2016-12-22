@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
+htmlentities<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>
 <?php
 	if(!isset($_SESSION['id_user'])){
@@ -23,8 +23,8 @@
 						$pass_U = $arr_U['password'];
 						
 						if(isset($_POST['sua'])){
-							$username = $mysqli->real_escape_string($_POST['username']);
-							$password = $mysqli->real_escape_string($_POST['password']);
+							$username = $mysqli->htmlentities($_POST['username']);
+							$password = $mysqli->htmlentities($_POST['password']);
 							$password_news = md5($password);
 							//th1 chỉ sửa pass 
 							if($username == $user_U){

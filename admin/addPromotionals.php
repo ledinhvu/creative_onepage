@@ -18,11 +18,11 @@
                      <div class="module-body">
 					 <?php
 						if(isset($_POST['them'])){
-							$title = $mysqli->real_escape_string($_POST['title']);
-							$detail = $mysqli->real_escape_string($_POST['detail']);
-                            $author = $mysqli->real_escape_string($_POST['author']);
-                            $job = $mysqli->real_escape_string($_POST['job']);
-                            $about_author = $mysqli->real_escape_string($_POST['about_author']);
+							$title = $mysqli->htmlentities($_POST['title']);
+							$detail = $mysqli->htmlentities($_POST['detail']);
+                            $author = $mysqli->htmlentities($_POST['author']);
+                            $job = $mysqli->htmlentities($_POST['job']);
+                            $about_author = $mysqli->htmlentities($_POST['about_author']);
 							
 							$name = $_FILES['hinhanh']['name'];
 							if($name != null){

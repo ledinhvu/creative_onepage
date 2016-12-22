@@ -34,7 +34,7 @@
                      <div class="module-body">
 					 <?php
 						if(isset($_POST['them'])){
-							$tendanhmuctin = mysql_real_escape_string($_POST['tendanhmuctin']);
+							$tendanhmuctin = htmlentities($_POST['tendanhmuctin']);
 							//$tendanhmuctin = $mysqli->real_escape_string($_POST['tendanhmuctin']);
 							$query = "INSERT INTO menus(menu_name) VALUES('$tendanhmuctin') ";
 							//thực hiện truy vấn

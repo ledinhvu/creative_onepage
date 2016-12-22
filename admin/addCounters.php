@@ -34,8 +34,8 @@
                      <div class="module-body">
 					 <?php
                         if(isset($_POST['them'])){
-							$count_name = mysql_real_escape_string($_POST['countname']);
-                            $value = mysql_real_escape_string($_POST['value']);
+							$count_name = htmlentities($_POST['countname']);
+                            $value = htmlentities($_POST['value']);
 			
 							$name = $_FILES['hinhanh']['name'];
 							if($name != null){

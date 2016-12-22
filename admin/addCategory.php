@@ -32,7 +32,7 @@
 			<?php
 				if(isset($_POST['add'])){
 					//get information from feild input when submit
-					$category = mysql_real_escape_string($_POST['category']);
+					$category = htmlentities($_POST['category']);
 					//insert
 					$query = "INSERT INTO categorys(name) VALUES('$category')";
 					$result = $mysqli->query($query);

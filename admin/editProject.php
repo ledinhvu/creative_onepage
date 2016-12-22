@@ -24,8 +24,8 @@
 				$hinh_anh = $arr_TT['img'];
 				$path = '/baitap/creative_onepage/files/'.$hinh_anh;
 				if(isset($_POST['edit'])){
-					$project =$mysqli->real_escape_string($_POST['project']);
-					$category = $mysqli->real_escape_string($_POST['taskoption']);
+					$project =$mysqli->htmlentities($_POST['project']);
+					$category = $mysqli->htmlentities($_POST['taskoption']);
 					$query2 = "SELECT * FROM categorys WHERE name='$category'";
 										
 					$result2 = $mysqli->query($query2);

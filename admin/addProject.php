@@ -16,8 +16,8 @@
 		<?php
 			if(isset($_POST['add'])){
 				//get information from feilds when submit
-				$name_project = $mysqli->real_escape_string($_POST['project']);
-				$name_category = $mysqli->real_escape_string($_POST['taskoption']);
+				$name_project = $mysqli->htmlentities($_POST['project']);
+				$name_category = $mysqli->htmlentities($_POST['taskoption']);
 				//get id category through name
 				$query2 = "SELECT * FROM categorys WHERE name='$name_category'";			
 				$result2 = $mysqli->query($query2);

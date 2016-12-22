@@ -22,7 +22,7 @@
 				$name_category = $arr_Cat['name'];
 				if(isset($_POST['edit'])){
 					//get category from feild input when submit
-					$category = $_POST['category'];
+					$category = htmlentities($_POST['category']);
 					//Update
 					$str = "UPDATE categorys SET name = '$category' WHERE
 					id_cate =$id_cate LIMIT 1";

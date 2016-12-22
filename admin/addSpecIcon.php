@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
+htmlentities<?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/templates/admin/inc/header.php';?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/baitap/creative_onepage/functions/dbconnect.php'; ?>
 <?php
 	if(!isset($_SESSION['id_user'])){
@@ -38,8 +38,8 @@
 				<?php
 					if(isset($_POST['add'])){
 						//get information from feilds when submit
-						$name = mysql_real_escape_string($_POST['name']);
-						$caption = mysql_real_escape_string($_POST['caption']);
+						$name = htmlentities($_POST['name']);
+						$caption = htmlentities($_POST['caption']);
 						//Insert
 						$query = "INSERT INTO special_icon(name,caption) VALUES('$name','$caption')";
 						$result = $mysqli->query($query);
