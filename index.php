@@ -386,7 +386,7 @@
             <div class="row">
                 <div class="">
                     <div class="col-lg-8 col-sm-8 col-sm-6 col-xs-12">
-                        <form method="POST" action="handleSend.php" accept-charset="UTF-8" class="frm-show-form" id="form-contacts" novalidate="novalidate">
+                        <form method="POST" action="sendMail.php" accept-charset="UTF-8" class="frm-show-form" id="form-contacts" novalidate="novalidate">
                         <input name="_token" type="hidden" value="5Z5oYKewpvNiQOIfyl85Wdz2PGUiyYpwLGWzGkWB">
                         <div class="frm_forms " id="frm_form_3_container">
                             <div class="frm_form_field form-field col-sm-6">
